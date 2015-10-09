@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "BranchesReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<IntroToMVC.Models.BranchReport>
+
+
+<h2>Branches Report</h2>
+<h3>Manager And His Branch</h3>
+<div id="fans">
+    <table>
+        @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Manager.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager.NumOfYearsInClub)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch.lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch.lng)
+            </th>
+        </tr>*@
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.NumOfYearsInClub)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Branch.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Branch.lat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Branch.lng)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<IntroToMVC.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Comments</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Search by content: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+
+<p>
+    @Html.ActionLink("Back To Posts", "RedirectToPosts", "Blog")
+</p>
+<div id="fans">
+    <table class="table">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RelatedPost.Title)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Writer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WriterWebSite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th></th>
+        </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Writer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WriterWebSite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                    <td>
+                        @{
+                             var user = TempData["loggedUser"] as IntroToMVC.Models.Fan;
+                             TempData.Keep("loggedUser");
+
+                             if ((int)IntroToMVC.Models.Permissions.Admin == user.Permission)
+                             {
+                                 @Html.ActionLink("Edit", "Edit", new { id = item.ID });
+                             }
+                        }
+                    </td>
+                </tr>
+            }
+
+    </table>
+</div>

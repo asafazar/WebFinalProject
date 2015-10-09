@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Styles/ShauliBlog.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    @RenderSection("Styles", false)
+</head>
+<body style="width: 100%; padding: 0;">
+    <div id="blackVail">
+    </div>
+    <div id="popUpWelcomeWindowLeft">
+    </div>
+    <div id="popUpWelcomeWindowRight">
+    </div>
+    <div id="popUpWelcomeWindow">
+        <div id="welcomeText" style="display: none; margin-top:20%; color: black;">Welcome to our GREAT website!</div>
+        <div id="limitStatement" style="display: none; margin-top: 5px; color: darkgreen;">Here the sky is the limit :)</div>
+    </div>
+    <div style="width: 72%; margin-left: 14%;">
+        <header>
+            <img id="titleLogo" style="width: 30px;" src="http://www.wpclipart.com/smiley/assorted_smiley/assorted_2/glossy_emoticon_button.png" alt="Logo">
+            <h1 style="display: inline-block;">Ha-Blog Shel Shauli</h1>
+
+            <script>
+                $('#titleLogo').click(function () {
+                    $("#titleLogo").attr("src", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpccAJ1LM1dA-QgIRi8MKjJJAdFdnw2SiBRIqkHSLIftrHnVovP43L72c");
+                });
+            </script>
+        </header>
+        <nav>
+            <!-- Navigation -->
+            <ul>
+                <li>@Html.ActionLink("Blog", "RedirectToBlog", "Blog")</li>
+                <li>@Html.ActionLink("Posts", "RedirectToPosts", "Blog")</li>
+                <li>@Html.ActionLink("Fan Club", "RedirectToFanClub", "Blog")</li>
+                <li>@Html.ActionLink("Contact", "RedirectToContact", "Blog")</li>
+                <li id="adminPanel" style="display: none;">@Html.ActionLink("Admin Panel", "RedirectToAdmin", "Blog")</li>
+                <script>
+                    var isTrue = "@this.Session["isAdmin"].Equals("Yes")";
+                    if (isTrue == "True") {
+                        $('#adminPanel').show();
+                    }
+                </script>
+            </ul>
+        </nav>
+        <section id="intro">
+            <!-- Introduction -->
+            <header>
+                <h2>Do you have questions for me?</h2>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+            <img src="~/Common/Images/intro_shauli.png" alt="Shauli" />
+        </section>
+        <section id="getTemperature">
+            Check the temparatue:
+            <select id="cityName">
+                <option value="-Choose-">- Choose -</option>
+                <option value="Ben-Gurion International Airport">Tel Aviv</option>
+                <option value="Eilat">Eilat</option>
+            </select>
+            <script>
+                $(document).ready(function () {
+                    $("#cityName").change(function () {
+                        if ($("#cityName option:selected").attr("value") != '-Choose-') {
+                            $.post("http://www.webservicex.net/globalweather.asmx/GetWeather",
+                            {
+                                CityName: $("#cityName option:selected").attr("value"),
+                                CountryName: "Israel"
+                            },
+                            function (data, status) {
+                                console.log(data);
+                                var xmlString = data.children[0].childNodes[0].data;
+                                xmlDoc = $.parseXML(xmlString),
+                                $xml = $(xmlDoc),
+                                $temperature = $xml.find("Temperature");
+                                alert($temperature[0].childNodes[0].data);
+                            });
+                        }
+                    });
+                });
+            </script>
+        </section>
+        <div id="content">
+            <aside>
+                <section>
+                    <header>
+                        <h3>Categories</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Sit amet consectetur</a></li>
+                        <li><a href="#">Adipisicing elit sed</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <header>
+                        <h3>Archives</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">December 2008</a></li>
+                        <li><a href="#">January 2009</a></li>
+                        <li><a href="#">February 2009</a></li>
+                        <li><a href="#">March 2009</a></li>
+                    </ul>
+                    <video width="400" controls>
+                        <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </section>
+            </aside>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <div>
+                    <section id="about">
+                        <header>
+                            <h3>About</h3>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
+                    </section>
+                    <section id="blogroll">
+                        <header>
+                            <h3>Blogroll</h3>
+                        </header>
+                        <ul>
+                            <li><a href="#">NETTUTS+</a></li>
+                            <li><a href="#">FreelanceSwitch</a></li>
+                        </ul>
+                    </section>
+                    <section id="popular">
+                        <header>
+                            <h3>Popular</h3>
+                        </header>
+                        <ul>
+                            <li><a href="#">This is the title of a blog post ss</a></li>
+                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                            <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </footer>
+        </div>
+
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

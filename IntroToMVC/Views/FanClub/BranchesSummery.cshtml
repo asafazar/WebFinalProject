@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Branches Summery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<IntroToMVC.Models.BranchSummery>
+
+
+<h2>Branches Report</h2>
+<h3>Manager And His Branch</h3>
+<div id="fans">
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Number Of Branches
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Count)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

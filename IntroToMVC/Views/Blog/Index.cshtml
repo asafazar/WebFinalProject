@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<IntroToMVC.Models.Post>
+
+    <section id="search">
+        <header>
+            <canvas id="canvas" width="30" height="30" style="display: inline-block;"></canvas>
+            <script>
+                var canvas = document.getElementById('canvas');
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext('2d');
+
+                    ctx.fillRect(5, 5, 20, 20);
+                    ctx.clearRect(9, 9, 12, 12);
+                    ctx.strokeRect(10, 10, 10, 10);
+                }
+
+                $("canvas").click(function () {
+                    $("#canvas").animate({ height: "32", width: "32" });
+                });
+            </script>
+
+            <h2 style="display: inline-block;">Search in our website</h2>
+            <h3>
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Writer First Name: @Html.TextBox("firstName")<br />
+                        Writer Last Name: @Html.TextBox("lastName")<br />
+                        Writer Web Site: @Html.TextBox("webSite")<br />
+                        Content: @Html.TextBox("content")<br />
+                        <input type="submit" value="Filter" />
+                    </p>
+                }
+            </h3>
+        </header>
+
+    </section>
+    <div id="content">
+        <div id="mainContent">
+            <section>
+                @foreach (var item in Model)
+                {
+                    <section>
+                        <article class="blogPost">
+                            <header>
+                                <h2>@Html.DisplayFor(model => item.Title)</h2>
+                                <p>Posted on <time>@Html.DisplayFor(model => item.PostingDate)</time> by <a href=@Html.DisplayFor(model => item.WebSite)>@Html.DisplayFor(model => item.Writer)</a> - <a href="#comments">@Html.DisplayFor(model => item.Comments.Capacity) comments</a></p>
+                            </header>
+                            <div>
+                                <p>@Html.DisplayFor(model => item.Content)</p>
+                            </div>
+                        </article>
+                    </section>
+                    <section id="comments">
+                        <h3>Comments</h3>
+                        @foreach (var comment in item.Comments.ToList())
+                        {
+                            <article>
+                                <header>
+                                    <a href=@comment.WriterWebSite>@comment.Writer</a>
+                                </header>
+                                <p>@comment.Content</p>
+                            </article>
+                        }
+                    </section>
+                    <form action="@Url.Action("Create", "Comments")" method="post">
+                        @Html.AntiForgeryToken()
+                        <h3>Post a comment</h3>
+                        <p>
+                            <label for="Writer">Name</label>
+                            <input name="Writer" id="Writer" type="text" required />
+                        </p>
+                        <p>
+                            <label for="Title">Title</label>
+                            <input name="Title" id="Title" type="text" required />
+                        </p>
+                        <p>
+                            <label for="WriterWebSite">Website</label>
+                            <input name="WriterWebSite" id="WriterWebSite" type="url" required />
+                        </p>
+                        <p>
+                            <label for="Content">Content</label>
+                            <textarea name="Content" id="Content" required></textarea>
+                        </p>
+                        <p>
+                            <input name="RelatedPostID" id="RelatedPostID" type="hidden" value=@item.ID />
+                        </p>
+                        <p><input type="submit" value="Post comment" /></p>
+                    </form>
+                }
+        </div>
+    </div>
+
+<script>
+    $(document).ready(function () {
+        var left = $('#popUpWelcomeWindowLeft').offset().left;
+        $('#blackVail').fadeIn();
+        $("#popUpWelcomeWindowLeft").css({ left: left })
+                        .animate({ left: "0px", width: "20%" });
+        $('#popUpWelcomeWindowRight').animate({ width: "20%" });
+
+        $('#welcomeText').slideUp();
+        setTimeout(function () {
+            $('#welcomeText').slideDown();
+        }, 1000);
+        setTimeout(function () {
+            $("#limitStatement").fadeIn('slow');
+        }, 1500);
+        setTimeout(function () {
+            $('#blackVail').fadeOut('fast');
+            $('#popUpWelcomeWindow').fadeOut('fast');
+            $('#popUpWelcomeWindowLeft').fadeOut('fast');
+            $('#popUpWelcomeWindowRight').fadeOut('fast');
+        }, 4500);
+    });
+</script>

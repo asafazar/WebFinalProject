@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha-Blog Shel Shauli</title>
+    <link href="~/Styles/Login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1>Ha-Blog Shel Shauli</h1>
+    </header>
+    <h3>
+        <form action="@Url.Action("VerifyUser", "FanClub")" method="post">
+            <!-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<------>
+                Username:
+                <input type="text" name="userName" placeholder="Username">
+                Password:
+                <input type="password" name="Password" placeholder="Password">
+                <input type="submit" value="Login" class="greenBtn">
+                <div id="error"></div>
+                <script>
+                $(document).ready(function () {
+                    if ("@Html.Raw(ViewBag.HtmlStr)" != "OK")
+                    {
+                        $('#error').html("@Html.Raw(ViewBag.HtmlStr)");
+                        $('#error').css("width", "300px");
+                        $('#error').fadeIn();
+                    }
+                });
+                </script>
+                <!-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<------>
+        </form>
+    </h3>
+</body>
+</html>

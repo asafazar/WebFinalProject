@@ -1,0 +1,562 @@
+/*------------------------------
+=BASIC SETUP
+------------------------------*/
+
+/* Makeshift CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Tell the browser to render HTML 5 elements as block */
+header, footer, section, aside, nav, article {
+	display: block;
+}
+
+body {
+	margin: 0 auto;
+	padding: 22px 0;
+	width: 940px;
+	font: 13px/22px Helvetica, Arial, sans-serif;
+	background: #F0F0F0;
+}
+
+h1 {
+    font-size: 28px;
+	line-height: 44px;
+	padding: 22px 0;
+     text-shadow: 3px 3px #DDDDDD;
+}
+
+h2 {
+	font-size: 28px;
+	line-height: 44px;
+	padding: 22px 0;
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 22px;
+	padding: 11px;
+}
+
+p {
+	padding-bottom: 22px;
+    padding-left: 12px;
+}
+
+
+
+/*------------------------------
+=NAVIGATION
+------------------------------*/
+
+nav {
+	position: absolute;
+	left: 0;
+	width: 100%;
+    background: -webkit-linear-gradient(#000000, #434343); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#000000, #434343); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#000000, #434343); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#000000, #434343); /* Standard syntax */
+}
+
+	nav ul {
+		margin: 0 auto;
+		width: 940px;
+		list-style: none;
+	}
+
+		nav ul li {
+			float: left;
+		}
+		
+			nav ul li a {
+				display: block;
+				margin-right: 20px;
+				width: 140px;
+				font-size: 14px;
+				line-height: 44px;
+				text-align: center;
+				text-decoration: none;
+				color: #777;
+			}
+			
+				nav ul li a:hover {
+					color: #fff;
+				}
+			
+			nav ul li.selected a {
+				color: #fff;
+			}
+			
+			nav ul li.subscribe a {
+				margin-left: 22px;
+				padding-left: 33px;
+				text-align: left;
+				background: url("../images/rss.png") left center no-repeat;
+			}
+
+
+/*------------------------------
+=INTRODUCTION
+------------------------------*/
+
+#intro {
+	position: relative;
+	margin-top: 66px;
+	padding: 44px;
+	/*background: #467612 url("images/intro_background.png") repeat-x;*/
+    background: -webkit-linear-gradient(#B3DC10, #467612); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#B3DC10, #467612); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#B3DC10, #467612); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#B3DC10, #467612); /* Standard syntax */
+	
+	/* Background-size not implemented yet */
+	-webkit-background-size: 100%;
+	-o-background-size: 100%;
+	-khtml-background-size: 100%;
+
+	
+	/* Border-radius not implemented yet */
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+}
+
+	#intro h2, #intro p {
+		position: relative;
+		z-index: 9999;
+		width: 436px;
+	}
+	
+	#intro h2 {
+		padding: 0 0 22px 0;
+		font-weight: normal;
+		color: #fff;
+	}
+	
+	#intro p {
+		padding: 0;
+		color: #d9f499;
+	}
+	
+	#intro img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 653px;
+		height: 100%;
+	
+		/* Border-radius not implemented yet */
+		-moz-border-radius: 22px;
+		-webkit-border-radius: 22px;
+	}
+
+/*------------------------------
+= BACKGROUND MUSIC
+------------------------------*/
+/*<style media="screen" type="text/css">
+ #backgroundaudio {
+  display: block;
+  position: absolute;
+  bottom: -43px;
+  left: 5px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+ }
+ #backgroundaudio:hover {
+  bottom: 0;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+ }
+ #backgroundaudio audio {
+  background: #ffffff;
+  padding: 5px;
+  display: table-cell;
+  vertical-align: middle;
+  height: 43px;
+  z-index: 9998;
+ }
+ #backgroundaudio i {
+  font-size: 40px;
+  display: block;
+  background: #ffffff;
+  padding: 5px;
+  width: 50px;
+  float: none;
+  margin-bottom: -1px;
+  z-index: 9999;
+ }
+</style>
+<div id="backgroundaudio">
+ <i class="icon-volume-up"></i>
+ <audio autoplay="" controls="" loop="" preload="">
+  <source src="http://192.254.184.234/~tangh/01_admin_resources/Shimmer/ogg/Smile.ogg" type="audio/ogg"></source>
+  <source src="http://192.254.184.234/~tangh/01_admin_resources/Shimmer/mp3/Smile.mp3" type="audio/mpeg"></source>
+  Your browser does not support the audio element.
+ </audio>
+</div>*/
+
+/*------------------------------
+=CONTENT AREA AND SIDEBAR LAYOUT
+------------------------------*/
+
+#content {
+	display: table;
+    float: right;
+}
+
+	#mainContent {
+		display: table-cell;
+		width: 620px;
+	}
+	
+	aside {
+        display: table-cell;
+		width: 300px;
+        background: -webkit-linear-gradient(left, #E3E3E3, #F0F0F0); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(right, #E3E3E3, #F0F0F0); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(right, #E3E3E3, #F0F0F0); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, #E3E3E3, #F0F0F0); /* Standard syntax */
+
+	}
+    
+/*------------------------------
+=SIDEBAR
+------------------------------*/
+aside section {
+    margin: 22px 0 0 22px;
+	padding: 11px 22px;
+    background: -webkit-linear-gradient(#F2F2F2, #FFFFFF);
+    background: -o-linear-gradient(#F2F2F2, #FFFFFF); 
+    background: -moz-linear-gradient(#F2F2F2, #FFFFFF);
+    background: linear-gradient(#F2F2F2, #FFFFFF);  
+	
+	/* Border-radius not implemented yet */
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
+
+	aside section ul {
+		margin: 0 0 0 22px;
+		list-style: none;
+	}
+	
+		aside section ul li a {
+			display: block;
+			text-decoration: none;
+			color: #000;
+		}
+		
+			aside section ul li a:hover {
+				text-decoration: underline;
+			}
+
+/*------------------------------
+=BLOG POST
+------------------------------*/
+
+div {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(Sansation_Bold/Sansation_Bold.woff);
+}
+
+.blogPost header p, .blogPost header p a {
+		font-size: 14px;
+		font-style: italic;
+		color: #777;
+        font-family: myFont;
+	}
+	
+		.blogPost header p a:hover {
+			text-decoration: none;
+			color: #000;
+		}
+
+.blogPost div {
+	/* Column-count not implemented yet */
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	
+	/* Column-gap not implemented yet */
+	-moz-column-gap: 22px;
+	-webkit-column-gap: 22px;
+}
+
+.blogPost img {
+	margin: 22px 0;
+	-webkit-box-shadow: 3px 3px 7px #777;
+}
+
+.blogPost video {
+	margin: 12px 0;
+	width: 100%;
+	height: auto;
+	-webkit-box-shadow: 3px 3px 7px #777;
+}
+
+
+/*------------------------------
+=COMMENTS
+------------------------------*/
+
+#comments {
+	margin-top: 21px;
+	padding-top: 22px;
+	border-top: 1px solid #d7d7d7;
+}
+
+	#comments article {
+		display: table;
+		padding: 22px;
+	}
+	
+	#comments article:nth-child(odd) {
+		padding: 21px;
+		background: #E3E3E3;
+		border: 1px solid #d7d7d7;
+		-moz-border-radius: 11px;
+		-webkit-border-radius: 11px;
+	}
+	
+		#comments article header {
+			display: table-cell;
+			width: 220px;
+			padding-right: 22px;
+		}
+		
+			#comments article header a {
+				display: block;
+				font-weight: bold;
+				color: #000;
+			}
+			
+				#comments article header a:hover {
+					text-decoration: none;
+				}
+		
+		#comments article p {
+			padding: 0;
+		}
+
+
+
+/*------------------------------
+=COMMENT FORM
+------------------------------*/
+form {
+	margin-top: 21px;
+	padding-top: 22px;
+	border-top: 1px solid #d7d7d7;
+}
+
+	form p {
+		display: table;
+		margin-bottom: 22px;
+		padding: 0 22px;
+	}
+
+		form label {
+			display: table-cell;
+			width: 140px;
+			padding-right: 20px;
+			text-align: right;
+			font-weight: bold;
+			vertical-align: top;
+		}
+	
+		form input[type="text"], form input[type="email"], form input[type="url"] {
+			display: table-cell;
+			width: 300px;
+			height: 20px;
+			border: 1px solid #d7d7d7;
+		}
+		
+		form textarea {
+			width: 300px;
+			height: 100px;
+			border: 1px solid #d7d7d7;
+		}
+		
+		form input[type="submit"] {
+			margin-left: 162px;
+		}
+
+/*------------------------------
+=Fans
+------------------------------*/
+#fans {
+	width: auto;
+    
+}
+#fans table{
+    border-collapse: collapse;
+    border:1px solid #000000;
+}
+#fans th{
+    border:1px solid #000000;
+}
+#fans td{
+    border:1px solid #000000;
+}
+
+/*------------------------------
+=FOOTER
+------------------------------*/
+footer {
+	clear: right;
+	width: 100%;
+	background: #222;
+}
+
+footer div {
+	display: table;
+	margin: 0 auto;
+	padding: 44px 0;
+	width: 940px;
+	color: #777;
+}
+	
+	footer div section {
+		display: table-cell;
+		width: 300px;
+	}
+		
+	footer div #about, footer div #blogroll {
+		padding-right: 20px;
+	}
+		
+footer h3 {
+	color: #FFF;
+}
+	
+footer a {
+	color: #999;
+}
+	
+	footer a:hover {
+		color: #FFF;
+		text-decoration: none;
+	}
+	
+footer ul {
+	margin: 0 0 0 40px;
+	list-style: square;
+	color: #565656;
+}
+	
+	footer ul li a {
+		display: block;
+	}
+
+    /************************************************
+    * Graph setup
+    ************************************************/
+    svg {
+     font: 10px sans-serif;
+    }
+
+    .y.axis path {
+      display: none;
+    }
+
+    .y.axis line {
+      stroke: #fff;
+      stroke-opacity: .2;
+      shape-rendering: crispEdges;
+    }
+
+    .y.axis .zero line {
+      stroke: #000;
+      stroke-opacity: 1;
+    }
+
+    .title {
+      font: 300 78px Helvetica Neue;
+      fill: #666;
+    }
+
+    .birthyear,
+    .age {
+      text-anchor: middle;
+    }
+
+    .birthyear {
+      fill: #fff;
+    }
+
+    rect {
+      fill-opacity: .6;
+      fill: #e377c2;
+    }
+
+    rect:first-child {
+      fill: #1f77b4;
+    }
+
+    #blackVail {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+        display: none;
+        z-index: 10000;
+    }
+
+    #popUpWelcomeWindowRight {
+        position: absolute;
+        float: right;
+        width: 0;
+        margin-left: 49%;
+        border-left: none;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 30px;
+        color: black;
+        height: 50%;
+        margin-top: 10%;
+        z-index: 10001;
+        text-align: center;
+    }
+
+    #popUpWelcomeWindowLeft {
+        position: absolute;
+        float: left;
+        width: 0;
+        margin-left: 30%;
+        border-right: none;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 30px;
+        color: black;
+        height: 50%;
+        margin-top: 10%;
+        z-index: 10001;
+        text-align: center;
+    }
+
+    #popUpWelcomeWindow {
+        position: absolute;
+        width: 40%;
+        margin-left: 30%;
+        background-color: transparent;
+        font-size: 30px;
+        color: black;
+        height: 50%;
+        margin-top: 10%;
+        z-index: 10002;
+        text-align: center;
+    }
