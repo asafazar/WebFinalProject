@@ -47,8 +47,8 @@ namespace IntroToMVC.Controllers
             if (!String.IsNullOrEmpty(userName) && !String.IsNullOrEmpty(password))
             {
                 
-                /*fans = fans.Where(s => s.UserName.Equals(userName) &&
-                                       s.Password.Equals(password));*/
+                fans = fans.Where(s => s.UserName.Equals(userName) &&
+                                       s.Password.Equals(password));
             }
 
 

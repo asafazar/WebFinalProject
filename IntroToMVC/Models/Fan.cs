@@ -40,7 +40,7 @@ namespace IntroToMVC.Models
 
         public FanDBContext()
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<FanDBContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FanDBContext>());
         }
 
     }

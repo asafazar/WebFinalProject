@@ -258,3 +258,27 @@ C:\asaf\לימודים\שנה ב'\קיץ\אפליקציות אינטרנטיות
 C:\asaf\לימודים\שנה ב'\קיץ\אפליקציות אינטרנטיות\מטלות\פרוייקט סוף\203533211_308854082_311500094\FinalProject\IntroToMVC\obj\Debug\IntroToMVC.csproj.GenerateResource.Cache
 C:\asaf\לימודים\שנה ב'\קיץ\אפליקציות אינטרנטיות\מטלות\פרוייקט סוף\203533211_308854082_311500094\FinalProject\IntroToMVC\obj\Debug\IntroToMVC.dll
 C:\asaf\לימודים\שנה ב'\קיץ\אפליקציות אינטרנטיות\מטלות\פרוייקט סוף\203533211_308854082_311500094\FinalProject\IntroToMVC\obj\Debug\IntroToMVC.pdb
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\IntroToMVC.dll.config
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\IntroToMVC.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\IntroToMVC.pdb
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\EntityFramework.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Helpers.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Mvc.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Razor.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Webpages.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\EntityFramework.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Razor.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Webpages.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Helpers.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\bin\System.Web.Mvc.xml
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\obj\Debug\IntroToMVC.Migrations.Last.resources
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\obj\Debug\IntroToMVC.csproj.GenerateResource.Cache
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\obj\Debug\IntroToMVC.dll
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\obj\Debug\IntroToMVC.pdb
+C:\Users\asaf\Documents\GitHub\WebFinalProject\IntroToMVC\obj\Debug\IntroToMVC.Migrations.InitialCreate.resources

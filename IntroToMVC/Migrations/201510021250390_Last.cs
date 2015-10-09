@@ -32,6 +32,8 @@ namespace IntroToMVC.Migrations
                         Gender = c.String(),
                         BirthDate = c.DateTime(nullable: false),
                         NumOfYearsInClub = c.Int(nullable: false),
+                        UserName = c.String(),
+                        Password = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
