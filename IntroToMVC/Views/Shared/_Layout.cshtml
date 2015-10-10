@@ -87,6 +87,11 @@
             </script>
         </section>
         <div id="content">
+        <div class="mainContent">
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+        </div>
             <aside>
                 <section>
                     <header>
@@ -109,7 +114,7 @@
                         <li><a href="#">March 2009</a></li>
                     </ul>
                 </section>
-                <section>
+                    <section>
                     <video width="400" controls>
                         <source src="~/Common/Hozier - Take Me To Church.mp4" type="video/mp4">
                         Your browser does not support HTML5 video.
@@ -118,9 +123,6 @@
             </aside>
         </div>
 
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
             <footer>
                 <div>
                     <section id="about">
@@ -143,7 +145,7 @@
                             <h3>Popular</h3>
                         </header>
                         <ul>
-                            <li><a href="#">This is the title of a blog post ss</a></li>
+                            <li><a href="#">This is the title of a blog post</a></li>
                             <li><a href="#">Lorem ipsum dolor sit amet</a></li>
                             <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
                         </ul>

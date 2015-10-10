@@ -209,12 +209,14 @@ nav {
 
 #content {
 	display: table;
-    float: right;
+    width:inherit;
+    height:inherit
 }
 
 	#mainContent {
 		display: table-cell;
 		width: 620px;
+		padding-right: 22px;
 	}
 	
 	aside {
@@ -416,50 +418,51 @@ form {
 =FOOTER
 ------------------------------*/
 footer {
-	clear: right;
+	position: absolute;
+	left: 0;
 	width: 100%;
 	background: #222;
 }
 
-footer div {
-	display: table;
-	margin: 0 auto;
-	padding: 44px 0;
-	width: 940px;
-	color: #777;
-}
-	
-	footer div section {
-		display: table-cell;
-		width: 300px;
+	footer div {
+		display: table;
+		margin: 0 auto;
+		padding: 44px 0;
+		width: 940px;
+		color: #777;
 	}
-		
-	footer div #about, footer div #blogroll {
-		padding-right: 20px;
-	}
-		
-footer h3 {
-	color: #FFF;
-}
 	
-footer a {
-	color: #999;
-}
-	
-	footer a:hover {
+		footer div section {
+			display: table-cell;
+			width: 300px;
+		}
+		
+		footer div #about, footer div #blogroll {
+			padding-right: 20px;
+		}
+		
+	footer h3 {
 		color: #FFF;
-		text-decoration: none;
 	}
 	
-footer ul {
-	margin: 0 0 0 40px;
-	list-style: square;
-	color: #565656;
-}
-	
-	footer ul li a {
-		display: block;
+	footer a {
+		color: #999;
 	}
+	
+		footer a:hover {
+			color: #FFF;
+			text-decoration: none;
+		}
+	
+	footer ul {
+		margin: 0 0 0 40px;
+		list-style: square;
+		color: #565656;
+	}
+	
+		footer ul li a {
+			display: block;
+		}
 
     /************************************************
     * Graph setup
