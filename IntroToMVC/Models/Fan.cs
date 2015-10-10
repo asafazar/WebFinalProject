@@ -30,18 +30,4 @@ namespace IntroToMVC.Models
         public string Password { get; set; }
 
     }
-
-    public class FanDBContext : DbContext
-    {
-        public DbSet<Fan> Fans { get; set; }
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<Branch> Branches { get; set; }
-
-        public FanDBContext()
-        {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FanDBContext>());
-        }
-
-    }
 }
