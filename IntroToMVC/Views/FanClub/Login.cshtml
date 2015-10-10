@@ -19,12 +19,13 @@
     <img src="~/Common/Images/shauli.jpg"/>
     <h3>
         <form action="@Url.Action("VerifyUser", "FanClub")" method="post">
-            <!-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<------>
                 Username:
                 <input type="text" name="userName" placeholder="Username">
                 Password:
                 <input type="password" name="Password" placeholder="Password">
-                <input type="submit" value="Login" class="greenBtn">
+                <input type="submit" value="Login" class="defaultlogin">
+                <input type="submit" value="Sign in With Facebook" class="fblogin">
+            </div>
                 <div id="error"></div>
                 <script>
                 $(document).ready(function () {
@@ -36,7 +37,6 @@
                     }
                 });
                 </script>
-                <!-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<------>
         </form>
     </h3>
 </body>

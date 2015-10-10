@@ -45,7 +45,7 @@ p {
 	padding-bottom: 22px;
 }
 
-    .greenBtn {
+    .defaultlogin {
     background-color: lightgreen;
     width: 5em;
     height: 2em;
@@ -54,6 +54,16 @@ p {
     margin-left: 5px;
     display: inline-block;
 }
+
+    .fblogin {
+        background-color: #496DBB;
+        height: 2em;
+        width: 15em;
+        color: white;
+        border-radius: 5px;
+        margin-left: 5px;
+        display: inline-block;
+    }
 
 input {
     display: inline-block;
@@ -74,3 +84,46 @@ input {
     background-color: red;
     box-shadow: 0px 0px 20px 10px;
 }
+
+ .login {
+    width: 340px;
+    display: inline-block;
+    zoom: 1;
+    white-space: nowrap;
+    height: 70px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  #fb-login {
+    background-color: #496DBB;
+  }
+  #fb-login:hover {
+    background-color: #3A5BA2;
+  }
+  #fb-login.login-btn {
+    display: block;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    height: 70px;
+    line-height: 70px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 270px;
+    text-shadow: 0.5px 0.866px 1px rgba(58, 91, 162, 1);
+    position: relative;
+    border:none;
+  }
+  #fb-logo.login-logo {
+    background: #3A5BA2 url(/www/images/fb.png) no-repeat center center;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    zoom: 1;
+    position: relative;
+    border:none;
+  }
+  #fb-logo.login-logo:hover,
+  #fb-login.login-btn:hover { border:none !important; }
