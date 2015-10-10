@@ -13,7 +13,7 @@ namespace IntroToMVC.Models
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Branch> Branches { get; set; }
 
-        public FanDBContext()
+        public FanDBContext(): base("name=FanDBContext")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FanDBContext>());
         }

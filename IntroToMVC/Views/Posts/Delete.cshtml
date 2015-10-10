@@ -51,14 +51,39 @@
         <dd>
             @Html.DisplayFor(model => model.Content)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @if (!String.IsNullOrEmpty(Model.Image))
+            {
+                <img class="postImage" src="@Url.Content(Model.Image)" alt="" />
+            }
+            else
+            {
+                <text> None </text>
+            }
+
+        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PostImage)
+            @Html.DisplayNameFor(model => model.Video)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.PostImage)
+            @if (!String.IsNullOrEmpty(Model.Video))
+            {
+                <video controls="controls">
+                    <source src="@Url.Content(Model.Video)" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            }
+            else
+            {
+                <text> None </text>
+            }
+
         </dd>
+
 
     </dl>
 

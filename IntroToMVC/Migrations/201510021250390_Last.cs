@@ -62,6 +62,8 @@ namespace IntroToMVC.Migrations
                         WebSite = c.String(),
                         PostingDate = c.DateTime(nullable: false),
                         Content = c.String(),
+                        Image = c.String(nullable: true),
+                        Video = c.String(nullable: true)
                     })
                 .PrimaryKey(t => t.ID);
             
