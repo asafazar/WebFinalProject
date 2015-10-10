@@ -43,36 +43,37 @@
                         @Html.ValidationMessageFor(model => model.WebSite, "", new { @class = "text-danger" })
                     </div>
                 </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PostingDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.PostingDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.PostingDate, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+            <dd>
+                @Html.CheckBox("ImageCheckBox", new { onclick = "enableDisable(this.checked, 'ImageBox')" })
+                @Html.TextBoxFor(model => model.Image, new { disabled = false, id = "ImageBox" })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </dd>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+            <dt>
+                @Html.DisplayNameFor(model => model.Video)
+            </dt>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PostImage, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.PostImage, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.PostImage, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
-                    </div>
-                </div>
+            <dd>
+                @Html.CheckBox("VideoCheckBox", new { onclick = "enableDisable(this.checked, 'VideoBox')" })
+                @Html.TextBoxFor(model => model.Video, new { disabled = false, id = "VideoBox" })
+                @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
+            </dd>
+        </dl>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         }
 

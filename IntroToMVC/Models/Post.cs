@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Drawing;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace IntroToMVC.Models
 {
@@ -22,5 +23,8 @@ namespace IntroToMVC.Models
         public string Content { get; set; }
         [DisplayName("Post Comments")]
         public List<Comment> Comments { get; set; }
+        [DataType(DataType.ImageUrl)]
+        public string Image { get; set; }
+        public string Video { get; set; }
     }
 }

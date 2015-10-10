@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201510091308561_InitialCreate.Designer.cs">
       <DependentUpon>201510091308561_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510101318482_init.cs" />
+    <Compile Include="Migrations\201510101318482_init.Designer.cs">
+      <DependentUpon>201510101318482_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\BranchReport.cs" />
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510091308561_InitialCreate.resx">
       <DependentUpon>201510091308561_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510101318482_init.resx">
+      <DependentUpon>201510101318482_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
