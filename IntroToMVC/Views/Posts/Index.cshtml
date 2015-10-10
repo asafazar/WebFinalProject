@@ -5,47 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Posts</h2>
-@using (Html.BeginForm())
-{
-    <p>
-        Search by content: @Html.TextBox("SearchString")
-        <input type="submit" value="Filter" />
-    </p>
-}
+<body>
+    <div id="mainContent">
 
-<div id="fans">
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Writer)
-            </th>
-        </tr>
-
-        @foreach (var item in Model)
+        <h2>Posts</h2>
+        @using (Html.BeginForm())
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Writer)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
-                    @Html.ActionLink("Manage Comments", "ManageComments", new { id = item.ID })
-                </td>
-            </tr>
+            <p>
+                Search by content: @Html.TextBox("SearchString")
+                <input type="submit" value="Filter" />
+            </p>
         }
 
-    </table>
-</div>
+        <div id="fans">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Writer)
+                    </th>
+                </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Writer)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
+                            @Html.ActionLink("Manage Comments", "ManageComments", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+
+    </div>
+</body>

@@ -3,43 +3,45 @@
 }
 
 @model IEnumerable<IntroToMVC.Models.Post>
+<body>
+    <div id="mainContent">
 
-    <section id="search">
-        <header>
-            <canvas id="canvas" width="30" height="30" style="display: inline-block;"></canvas>
-            <script>
-                var canvas = document.getElementById('canvas');
-                if (canvas.getContext) {
-                    var ctx = canvas.getContext('2d');
+        <section id="search">
+            <header>
+                <canvas id="canvas" width="30" height="30" style="display: inline-block;"></canvas>
+                <script>
+                    var canvas = document.getElementById('canvas');
+                    if (canvas.getContext) {
+                        var ctx = canvas.getContext('2d');
 
-                    ctx.fillRect(5, 5, 20, 20);
-                    ctx.clearRect(9, 9, 12, 12);
-                    ctx.strokeRect(10, 10, 10, 10);
-                }
+                        ctx.fillRect(5, 5, 20, 20);
+                        ctx.clearRect(9, 9, 12, 12);
+                        ctx.strokeRect(10, 10, 10, 10);
+                    }
 
-                $("canvas").click(function () {
-                    $("#canvas").animate({ height: "32", width: "32" });
-                });
-            </script>
+                    $("canvas").click(function () {
+                        $("#canvas").animate({ height: "32", width: "32" });
+                    });
+                </script>
 
-            <h2 style="display: inline-block;">Search in our website</h2>
-            <h3>
-                @using (Html.BeginForm())
-                {
-                    <p>
-                        Writer First Name: @Html.TextBox("firstName")<br />
-                        Writer Last Name: @Html.TextBox("lastName")<br />
-                        Writer Web Site: @Html.TextBox("webSite")<br />
-                        Content: @Html.TextBox("content")<br />
-                        <input type="submit" value="Filter" />
-                    </p>
-                }
-            </h3>
-        </header>
+                <h2 style="display: inline-block;">Search in our website</h2>
+                <h3>
+                    @using (Html.BeginForm())
+                    {
+                        <p>
+                            Writer First Name: @Html.TextBox("firstName")<br />
+                            Writer Last Name: @Html.TextBox("lastName")<br />
+                            Writer Web Site: @Html.TextBox("webSite")<br />
+                            Content: @Html.TextBox("content")<br />
+                            <input type="submit" value="Filter" />
+                        </p>
+                    }
+                </h3>
+            </header>
 
-    </section>
-    <div id="content">
-        <div id="mainContent">
+        </section>
+        <div id="content">
+
             <section>
                 @foreach (var item in Model)
                 {
@@ -94,26 +96,28 @@
         </div>
     </div>
 
-<script>
-    $(document).ready(function () {
-        var left = $('#popUpWelcomeWindowLeft').offset().left;
-        $('#blackVail').fadeIn();
-        $("#popUpWelcomeWindowLeft").css({ left: left })
-                        .animate({ left: "0px", width: "20%" });
-        $('#popUpWelcomeWindowRight').animate({ width: "20%" });
+    <script>
+        $(document).ready(function () {
+            var left = $('#popUpWelcomeWindowLeft').offset().left;
+            $('#blackVail').fadeIn();
+            $("#popUpWelcomeWindowLeft").css({ left: left })
+                            .animate({ left: "0px", width: "20%" });
+            $('#popUpWelcomeWindowRight').animate({ width: "20%" });
 
-        $('#welcomeText').slideUp();
-        setTimeout(function () {
-            $('#welcomeText').slideDown();
-        }, 1000);
-        setTimeout(function () {
-            $("#limitStatement").fadeIn('slow');
-        }, 1500);
-        setTimeout(function () {
-            $('#blackVail').fadeOut('fast');
-            $('#popUpWelcomeWindow').fadeOut('fast');
-            $('#popUpWelcomeWindowLeft').fadeOut('fast');
-            $('#popUpWelcomeWindowRight').fadeOut('fast');
-        }, 4500);
-    });
-</script>
+            $('#welcomeText').slideUp();
+            setTimeout(function () {
+                $('#welcomeText').slideDown();
+            }, 1000);
+            setTimeout(function () {
+                $("#limitStatement").fadeIn('slow');
+            }, 1500);
+            setTimeout(function () {
+                $('#blackVail').fadeOut('fast');
+                $('#popUpWelcomeWindow').fadeOut('fast');
+                $('#popUpWelcomeWindowLeft').fadeOut('fast');
+                $('#popUpWelcomeWindowRight').fadeOut('fast');
+            }, 4500);
+        });
+    </script>
+
+</body>

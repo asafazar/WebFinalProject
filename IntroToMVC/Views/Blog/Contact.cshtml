@@ -1,15 +1,18 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body>
+    <div id="mainContent">
+        <h2>Contact Information</h2>
 
-<h2>Contact Information</h2>
-
-<div>
-    <div>
-        Phone: +972545656378
-    </div>
-    <div>
-        Branches:<br />
-        <iframe src="~/Views/Blog/googleMaps.html?@Html.Raw(ViewBag.HtmlStr)" style="width: 630px; height: 500px; border: none;"></iframe>
-    </div>
-</div>
+        <div>
+            <div>
+                Phone: +972545656378
+            </div>
+            <div>
+                Branches:<br />
+                <iframe src="~/Views/Blog/googleMaps.html?@Html.Raw(ViewBag.HtmlStr)" style="width: 630px; height: 500px; border: none;"></iframe>
+            </div>
+        </div>
+        </div>
+    </body>

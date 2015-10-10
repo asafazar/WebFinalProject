@@ -19,8 +19,9 @@
     <div id="popUpWelcomeWindowRight">
     </div>
     <div id="popUpWelcomeWindow">
-        <div id="welcomeText" style="display: none; margin-top:20%; color: black;">Welcome to our GREAT website!</div>
-        <div id="limitStatement" style="display: none; margin-top: 5px; color: darkgreen;">Here the sky is the limit :)</div>
+        <div id="welcomeText" style="display: none; margin-top:20%; color: black;">Welcome to Shauli's Blog!</div>
+        <div id="limitStatement" style="display: none; margin-top: 5px; color: blue;">or Shaul ;)</div>
+        <div id="limitStatement2" style="display: none; margin-top: 5px; color: purple;">or Shauli ;)</div>
     </div>
     <div style="width: 72%; margin-left: 14%;">
         <header>
@@ -87,11 +88,10 @@
             </script>
         </section>
         <div id="content">
-        <div class="mainContent">
-            <div class="container body-content">
-                @RenderBody()
-            </div>
-        </div>
+            <div class="mainContent">
+            <!--<div class="container body-content">-->
+                    @RenderBody()
+
             <aside>
                 <section>
                     <header>
@@ -122,39 +122,42 @@
                 </section>
             </aside>
         </div>
-
-            <footer>
-                <div>
-                    <section id="about">
-                        <header>
-                            <h3>About</h3>
-                        </header>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
-                    </section>
-                    <section id="blogroll">
-                        <header>
-                            <h3>Blogroll</h3>
-                        </header>
-                        <ul>
-                            <li><a href="#">NETTUTS+</a></li>
-                            <li><a href="#">FreelanceSwitch</a></li>
-                        </ul>
-                    </section>
-                    <section id="popular">
-                        <header>
-                            <h3>Popular</h3>
-                        </header>
-                        <ul>
-                            <li><a href="#">This is the title of a blog post</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                            <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
-                        </ul>
-                    </section>
-                </div>
-            </footer>
-        </div>
-
-        @RenderSection("scripts", required: false)
     </div>
+
+    <div>
+        <footer>
+            <!-- Footer -->
+            <div>
+                <section id="about">
+                    <header>
+                        <h3>About</h3>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
+                </section>
+                <section id="blogroll">
+                    <header>
+                        <h3>Blogroll</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">NETTUTS+</a></li>
+                        <li><a href="#">FreelanceSwitch</a></li>
+                    </ul>
+                </section>
+                <section id="popular">
+                    <header>
+                        <h3>Popular</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">This is the title of a blog post</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                    </ul>
+                </section>
+            </div>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+
 </body>
 </html>

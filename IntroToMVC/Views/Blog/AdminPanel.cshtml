@@ -2,15 +2,17 @@
     ViewBag.Title = "AdminPanel";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body>
+    <div id="mainContent">
+        <h2>AdminPanel</h2>
 
-<h2>AdminPanel</h2>
-
-<div>
-    <h2>You are the admin!!</h2>
-    <h3>As the admin of this awesome website you are able to change the world :O</h3>
-    <h3>@Html.ActionLink("Branches management system", "RedirectToBranchPage", "Blog")</h3>
+        <div>
+            <h2>You are the admin!!</h2>
+            <h3>As the admin of this awesome website you are able to change the world :O</h3>
+            <h3>@Html.ActionLink("Branches management system", "RedirectToBranchPage", "Blog")</h3>
+        </div>
+        <h3>@Html.ActionLink("Fans Managment", "IndexAdmin", "FanClub")</h3>
+        <h3>@Html.ActionLink("Branches Report", "BranchesReport", "FanClub")</h3>
+        <h3>@Html.ActionLink("Branches Summerize", "BranchesSummery", "FanClub")</h3>
 </div>
-<h3>@Html.ActionLink("Fans Managment", "IndexAdmin", "FanClub")</h3>
-<h3>@Html.ActionLink("Branches Report", "BranchesReport", "FanClub")</h3>
-<h3>@Html.ActionLink("Branches Summerize", "BranchesSummery", "FanClub")</h3>
-
+    </body>
