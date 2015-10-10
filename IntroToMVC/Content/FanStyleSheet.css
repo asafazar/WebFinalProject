@@ -1,0 +1,109 @@
+﻿
+.CSSTableGenerator{
+    width: 95%;
+}  
+  .CSSTableGenerator td {
+        vertical-align: middle;
+        background: -o-linear-gradient(bottom, #FFE4E1 5%, #FFF0F5 100%);
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FFE4E1), color-stop(1, #FFF0F5) );
+        background: -moz-linear-gradient( center top, #FFE4E1 5%, #FFF0F5 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFE4E1", endColorstr="#FFF0F5");
+        background: -o-linear-gradient(top,#FFE4E1, #FFF0F5);
+        background-color: #FFE4E1;
+        border: 1px solid #FFF0F5;
+        border-width: 0px 1px 1px 0px;
+        text-align: left;
+        padding: 7px;
+        font-size: 10px;
+        font-family: Arial;
+        font-weight: normal;
+        color: #000000;
+    }
+
+    .CSSTableGenerator tr:last-child td {
+        border-width: 0px 1px 0px 0px;
+    }
+
+    .CSSTableGenerator tr td:last-child {
+        border-width: 0px 0px 1px 0px;
+    }
+
+    .CSSTableGenerator tr:last-child td:last-child {
+        border-width: 0px 0px 0px 0px;
+    }
+
+    .CSSTableGenerator tr:first-child td {
+        background: -o-linear-gradient(bottom, #DB7093 5%, #FFB6C1 100%);
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DB7093), color-stop(1, #FFB6C1) );
+        background: -moz-linear-gradient( center top, #DB7093 5%, #FFB6C1 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#DB7093", endColorstr="#FFB6C1");
+        background: -o-linear-gradient(top,#DB7093,#FFB6C1);
+        background-color: #DB7093;
+        border: 0px solid #FFB6C1;
+        text-align: center;
+        border-width: 0px 0px 1px 1px;
+        font-size: 14px;
+        font-family: Arial;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .CSSTableGenerator tr:first-child:hover td {
+        background: -o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+        background: -moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");
+        background: -o-linear-gradient(top,#5fbf00,3f7f00);
+        background-color: #5fbf00;
+    }
+
+    .CSSTableGenerator tr:first-child td:first-child {
+        border-width: 0px 0px 1px 0px;
+    }
+
+    .CSSTableGenerator tr:first-child td:last-child {
+        border-width: 0px 0px 1px 1px;
+    }
+
+   dl {
+        float: left;
+        padding: 0.5em;
+    }
+
+   dt {
+        float: left;
+        clear: left;
+        width: 100px;
+        text-align: left;
+        font-weight: bold;
+        color: blue;
+    }
+
+    dt:after {
+        content: ":";
+    }
+
+    dd {
+    text-align: left;
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0;
+    }
+
+    form input[type="text"] {
+	width: 13em;
+	}
+
+    p input[type="submit"] {
+	margin-left: 0;
+	}
+
+    form {
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+    div p {
+    margin-top: 21px;
+	padding: 0 0 0 0;
+	}
+
+    
