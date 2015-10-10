@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace IntroToMVC.Controllers
 {
+    [RequireHttps]
     public class BlogController : Controller
     {
         private FanDBContext db = new FanDBContext();

@@ -10,6 +10,7 @@ using IntroToMVC.Models;
 
 namespace IntroToMVC.Controllers
 {
+    [RequireHttps]
     public class GraphController : Controller
     {
         private FanDBContext db = new FanDBContext();

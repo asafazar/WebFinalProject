@@ -11,6 +11,7 @@ using System.Collections;
 
 namespace IntroToMVC.Controllers
 {
+    [RequireHttps]
     public class FanClubController : Controller
     {
         public enum Status
