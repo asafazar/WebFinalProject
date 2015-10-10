@@ -99,6 +99,7 @@
     <Content Include="Common\Images\rss.png" />
     <Content Include="Common\Images\sidebar_background.png" />
     <Content Include="Common\Images\sidebar_section_background.png" />
+    <Content Include="Common\shauli-thanks.mp4" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -149,6 +150,7 @@
     <Compile Include="Models\BranchReport.cs" />
     <Compile Include="Models\BranchSummery.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\FanDBContext.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Fan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

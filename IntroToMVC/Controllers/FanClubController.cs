@@ -37,10 +37,6 @@ namespace IntroToMVC.Controllers
 
         public ActionResult VerifyUser(string userName, string password)
         {
-            /*var fans = from f in db.Fans
-                              where ((f.UserName == (userName.ToLower())) && (f.Password == (password.ToLower())))
-                              select f;*/ ;
-            //db = new FanDBContext();
             var fans = from f in db.Fans
                        select f;
 
@@ -57,13 +53,14 @@ namespace IntroToMVC.Controllers
                 if (fans.ToList()[0].Permission == 2)
                 {
                     status = Status.Admin;
+                    this.Session["isAdmin"] = "Yes";
                 }
                 else
                 {
                     status = Status.Logged;
+                    this.Session["isAdmin"] = "No";
                 }
 
-                this.Session["isAdmin"] = "No";
                 return RedirectToAction("Index", "Blog");
             }
             else
