@@ -4,96 +4,98 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body>
+    <div id="mainContent">
+        <h2>Delete</h2>
 
-<h2>Delete</h2>
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Post</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Post</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Writer)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Writer)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Writer)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Writer)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.WebSite)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WebSite)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.WebSite)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.WebSite)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PostingDate)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PostingDate)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PostingDate)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PostingDate)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Content)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Content)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Image)
+                </dt>
+                <dd>
+                    @if (!String.IsNullOrEmpty(Model.Image))
+                    {
+                        <img class="postImage" src="@Url.Content(Model.Image)" alt="" />
+                    }
+                    else
+                    {
+                        <text> None </text>
+                    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd>
-            @if (!String.IsNullOrEmpty(Model.Image))
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Video)
+                </dt>
+                <dd>
+                    @if (!String.IsNullOrEmpty(Model.Video))
+                    {
+                        <video controls="controls">
+                            <source src="@Url.Content(Model.Video)" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    }
+                    else
+                    {
+                        <text> None </text>
+                    }
+
+                </dd>
+            </dl>
+
+            @using (Html.BeginForm())
             {
-                <img class="postImage" src="@Url.Content(Model.Image)" alt="" />
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+
+                </div>
             }
-            else
-            {
-                <text> None </text>
-            }
-
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Video)
-        </dt>
-        <dd>
-            @if (!String.IsNullOrEmpty(Model.Video))
-            {
-                <video controls="controls">
-                    <source src="@Url.Content(Model.Video)" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            }
-            else
-            {
-                <text> None </text>
-            }
-
-        </dd>
-
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-
         </div>
-        </div>
-
+</div>
+</body>
