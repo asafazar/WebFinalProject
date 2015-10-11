@@ -56,9 +56,21 @@
             </dt>
 
             <dd>
-                @Html.CheckBox("ImageCheckBox", new { onclick = "enableDisable(this.checked, 'ImageBox')" })
-                @Html.TextBoxFor(model => model.Image, new { disabled = false, id = "ImageBox" })
+                @Html.CheckBox("ImageCheckBox")
+                @Html.TextBoxFor(model => model.Image, new { @class = "Image", disabled = "disabled" })
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                <script>
+                    $('#ImageCheckBox').click(function () {
+                        var $this = $(this);
+
+                        if ($this.is(':checked')) {
+                            $('#Image').removeAttr("disabled");
+                        } else {
+                            $('#Image').attr("disabled", "disabled")
+                        }
+                    });
+                </script>
+
             </dd>
 
             <dt>
@@ -66,9 +78,21 @@
             </dt>
 
             <dd>
-                @Html.CheckBox("VideoCheckBox", new { onclick = "enableDisable(this.checked, 'VideoBox')" })
-                @Html.TextBoxFor(model => model.Video, new { disabled = false, id = "VideoBox" })
+                @Html.CheckBox("VideoCheckBox")
+                @Html.TextBoxFor(model => model.Video, new { @class = "Video", disabled = "disabled" })
                 @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
+                <script>
+                    $('#VideoCheckBox').click(function () {
+                        var $this = $(this);
+
+                        if ($this.is(':checked')) {
+                            $('#Video').removeAttr("disabled");
+                        } else {
+                            $('#Video').attr("disabled", "disabled")
+                        }
+                    });
+                </script>
+
             </dd>
         </dl>
         <div class="form-group">
