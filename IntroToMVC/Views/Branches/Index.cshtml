@@ -11,18 +11,17 @@
         <p>
             @Html.ActionLink("Create New", "Create")
         </p>
-        <table class="table">
+        <table class="CSSTableGenerator">
             <tr>
-                <th>
+                <td>
                     @Html.DisplayNameFor(model => model.name)
-                </th>
-                <th>
+                </td>
+                <td>
                     @Html.DisplayNameFor(model => model.lat)
-                </th>
-                <th>
+                </td>
+                <td>
                     @Html.DisplayNameFor(model => model.lng)
-                </th>
-                <th></th>
+                </td>
             </tr>
 
             @foreach (var item in Model)
