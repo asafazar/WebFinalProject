@@ -25,7 +25,7 @@ namespace IntroToMVC.Controllers
         private FanDBContext db = new FanDBContext();
         private static string message = "OK";
         private static Status status = Status.Off;
-        private static string access_token = "";
+        public static string access_token = "";
 
         public Status getStatus()
         {

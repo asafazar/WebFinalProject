@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using IntroToMVC.Models;
+using Facebook;
 
 namespace IntroToMVC.Controllers
 {
@@ -67,6 +68,11 @@ namespace IntroToMVC.Controllers
             {
                 db.Posts.Add(post);
                 db.SaveChanges();
+
+                var client = new FacebookClient(FanClubController.access_token);
+
+                client.Post("/me/feed/", new { message = string.Format("Title is:{0} And Writer is:{1}", post.Title, post.Writer) }); 
+
                 return RedirectToAction("Index");
             }
 
