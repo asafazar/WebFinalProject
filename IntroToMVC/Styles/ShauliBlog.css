@@ -44,7 +44,24 @@ p {
 	padding-bottom: 22px;
 }
 
+/* Rotate title logo */
+			 
+#transImg div {
+	height:30px;
+	width:30px;
+	text-align:center;
+	-webkit-transition: all 2s ease-in-out;
+	-moz-transition: all 2s ease-in-out;
+	-ms-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
+}
 
+#transImg div:hover, #transImg div.hover_effect {
+    -webkit-transform:rotate(720deg) scale(2,2);
+    -moz-transform:rotate(720deg) scale(2,2);
+    -ms-transform:rotate(720deg) scale(2,2);
+    transform:rotate(720deg) scale(2,2);
+}
 
 /*------------------------------
 =NAVIGATION
