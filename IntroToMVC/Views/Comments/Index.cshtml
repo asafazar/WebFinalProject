@@ -59,17 +59,11 @@
                         <td>
                             @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                         </td>
-                        <td>
-                            @{
-                    var user = TempData["loggedUser"] as IntroToMVC.Models.Fan;
-                    TempData.Keep("loggedUser");
-
-                    if ((int)IntroToMVC.Models.Permissions.Admin == user.Permission)
-                    {
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID });
-                    }
-                            }
-                        </td>
+                        
+                        <td >
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID });
+                            </td>
+                            
                     </tr>
                 }
 
