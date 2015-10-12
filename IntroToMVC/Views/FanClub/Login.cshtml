@@ -13,6 +13,7 @@
     <link href="~/Styles/Login.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <!--
     <header>
         <h1>Ha-Blog Shel Shauli</h1>
     </header>
@@ -38,5 +39,43 @@
         <form action="@Url.Action("LogInFaceBook","FanClub")" method="post" >
             <input type="submit" value="Sign in With Facebook" class="fblogin">
         </form>
-</body>
+
+
+        -->
+    <div class="login">
+        <div class="heading">
+            <h2>Sign in</h2>
+            <form action="@Url.Action("VerifyUser", "FanClub")">
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+
+                <button type="submit" class="float">Login</button>
+
+                <div id="error"></div>
+                <script>
+                    $(document).ready(function () {
+                        if ("@Html.Raw(ViewBag.HtmlStr)" != "OK") {
+                            $('#error').html("@Html.Raw(ViewBag.HtmlStr)");
+                            $('#error').css("width", "300px");
+                            $('#error').fadeIn();
+                        }
+                    });
+                </script>
+            </form>
+            <form action="@Url.Action("LogInFaceBook","FanClub")" method="post">
+                <button type="submit" class="fblogin">Sign in With Facebook</button>
+            </form>
+        </div>
+    </div>
+
+   
+    </body>
 </html>
