@@ -62,16 +62,25 @@ namespace IntroToMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Writer,WebSite,PostingDate,Content,Image,Video")] Post post)
+        public ActionResult Create([Bind(Include = "ID,Title,Writer,WebSite,PostingDate,Content,Image,Video")] Post post, bool ImageCheckBox, bool VideoCheckBox)
         {
+            post.Comments = new List<Comment>();
+
             if (ModelState.IsValid)
             {
+                if (!ImageCheckBox)
+                    post.Image = string.Empty;
+                if (!VideoCheckBox)
+                    post.Video = string.Empty;
                 db.Posts.Add(post);
                 db.SaveChanges();
 
-                var client = new FacebookClient(FanClubController.access_token);
+                if (FanClubController.access_token != "")
+                {
+                    var client = new FacebookClient(FanClubController.access_token);
 
-                client.Post("/me/feed/", new { message = string.Format("Title is:{0} And Writer is:{1}", post.Title, post.Writer) }); 
+                    client.Post("/me/feed/", new { message = string.Format("Title is:{0} And Writer is:{1}", post.Title, post.Writer) });
+                }
 
                 return RedirectToAction("Index");
             }
@@ -99,10 +108,16 @@ namespace IntroToMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,RelatedPostID,Title,Writer,WriterWebSite,Content,Image,Video")] Post post)
+        public ActionResult Edit([Bind(Include = "ID,Title,Writer,WebSite,Content,Image,Video")] Post post, bool ImageCheckBox, bool VideoCheckBox)
         {
+            post.PostingDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
+                if (!ImageCheckBox)
+                    post.Image = string.Empty;
+                if (!VideoCheckBox)
+                    post.Video = string.Empty;
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

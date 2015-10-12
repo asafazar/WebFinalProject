@@ -7,108 +7,104 @@
 
 <h2>Edit</h2>
 
-<body>
-    <div id="mainContent">
+<div id="mainContent">
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                <h4>Post</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.ID)
+        <div class="form-horizontal">
+            <h4>Post</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Writer, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Writer, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Writer, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                <dd>
+                    @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title, "")
+                </dd>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.WebSite, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.WebSite, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.WebSite, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-            </div>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Writer)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.Writer)
+                    @Html.ValidationMessageFor(model => model.Writer, "")
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.WebSite)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.WebSite)
+                    @Html.ValidationMessageFor(model => model.WebSite, "")
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Content)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.Content)
+                    @Html.ValidationMessageFor(model => model.Content, "")
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Image)
+                </dt>
+
+                <dd>
+                    @Html.CheckBox("ImageCheckBox")
+                    @Html.TextBoxFor(model => model.Image, new { @class = "Image", disabled = "disabled" })
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                    <script>
+                        $('#ImageCheckBox').click(function () {
+                            var $this = $(this);
+
+                            if ($this.is(':checked')) {
+                                $('#Image').removeAttr("disabled");
+                            } else {
+                                $('#Image').attr("disabled", "disabled")
+                            }
+                        });
+                    </script>
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Video)
+                </dt>
+
+                <dd>
+                    @Html.CheckBox("VideoCheckBox")
+                    @Html.TextBoxFor(model => model.Video, new { @class = "Video", disabled = "disabled" })
+                    @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
+                    <script>
+                        $('#VideoCheckBox').click(function () {
+                            var $this = $(this);
+
+                            if ($this.is(':checked')) {
+                                $('#Video').removeAttr("disabled");
+                            } else {
+                                $('#Video').attr("disabled", "disabled")
+                            }
+                        });
+                    </script>
+
+                </dd>
+
+                <p>
+                    <input type="submit" value="Save" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            </dl>
         </div>
-        <dl>
-            <dt>
-                @Html.DisplayNameFor(model => model.Image)
-            </dt>
-
-            <dd>
-                @Html.CheckBox("ImageCheckBox")
-                @Html.TextBoxFor(model => model.Image, new { @class = "Image", disabled = "disabled" })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-                <script>
-                    $('#ImageCheckBox').click(function () {
-                        var $this = $(this);
-
-                        if ($this.is(':checked')) {
-                            $('#Image').removeAttr("disabled");
-                        } else {
-                            $('#Image').attr("disabled", "disabled")
-                        }
-                    });
-                </script>
-
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Video)
-            </dt>
-
-            <dd>
-                @Html.CheckBox("VideoCheckBox")
-                @Html.TextBoxFor(model => model.Video, new { @class = "Video", disabled = "disabled" })
-                @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
-                <script>
-                    $('#VideoCheckBox').click(function () {
-                        var $this = $(this);
-
-                        if ($this.is(':checked')) {
-                            $('#Video').removeAttr("disabled");
-                        } else {
-                            $('#Video').attr("disabled", "disabled")
-                        }
-                    });
-                </script>
-
-            </dd>
-        </dl>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-                </div>
-        }
-
-        <div>
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-
         <script src="~/Scripts/jquery-1.10.2.min.js"></script>
         <script src="~/Scripts/jquery.validate.min.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    }
 </div>
-</body>

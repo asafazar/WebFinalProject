@@ -22,6 +22,6 @@ namespace IntroToMVC.Models
         [DisplayName("Content")]
         public string Content { get; set; }
         [DisplayName("Comment to")]
-        public Post RelatedPost { get; set; }
+        public virtual Post RelatedPost { get; set; }
     }
 }

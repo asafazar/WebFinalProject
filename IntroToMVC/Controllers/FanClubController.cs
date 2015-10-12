@@ -75,7 +75,7 @@ namespace IntroToMVC.Controllers
             if (access_token != "")
             {
                 status = Status.Logged;
-                this.Session["isAdmin"] = "No";
+                this.Session["isAdmin"] = "Yes";
                 return RedirectToAction("Index", "Blog");
             }
             else

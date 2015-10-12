@@ -49,11 +49,20 @@
                         <article class="blogPost">
                             <header>
                                 <h2>@Html.DisplayFor(model => item.Title)</h2>
-                                <p>Posted on <time>@Html.DisplayFor(model => item.PostingDate)</time> by <a href=@Html.DisplayFor(model => item.WebSite)>@Html.DisplayFor(model => item.Writer)</a> - <a href="#comments">@Html.DisplayFor(model => item.Comments.Capacity) comments</a></p>
+                                <p>Posted on <time>@Html.DisplayFor(model => item.PostingDate)</time> by <a href=@Html.DisplayFor(model => item.WebSite)>@Html.DisplayFor(model => item.Writer)</a> - <a href="#comments">@Html.DisplayFor(model => item.Comments) comments</a></p>
                             </header>
                             <div>
                                 <p>@Html.DisplayFor(model => item.Content)</p>
-                            </div>
+                                <div>
+                                    <img id="Image" src=@item.Image />
+                                </div>
+                                <div>
+                                    <video width="400" controls>
+                                        <source src=@item.Video type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                           </div>
                         </article>
                     </section>
                     <section id="comments">
@@ -91,8 +100,10 @@
                             <input name="RelatedPostID" id="RelatedPostID" type="hidden" value=@item.ID />
                         </p>
                         <p><input type="submit" value="Post comment" /></p>
+                        
                     </form>
                 }
+                </section>
         </div>
     </div>
 

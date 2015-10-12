@@ -22,7 +22,7 @@ namespace IntroToMVC.Models
         [DisplayName("Post Content")]
         public string Content { get; set; }
         [DisplayName("Post Comments")]
-        public List<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         [DataType(DataType.ImageUrl)]
         public string Image { get; set; }
         public string Video { get; set; }
