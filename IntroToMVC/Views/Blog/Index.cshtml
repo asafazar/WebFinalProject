@@ -2,6 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @model IEnumerable<IntroToMVC.Models.Post>
 <body>
     <div id="mainContent">
@@ -52,16 +53,16 @@
                                 <p>Posted on <time>@Html.DisplayFor(model => item.PostingDate)</time> by <a href=@Html.DisplayFor(model => item.WebSite)>@Html.DisplayFor(model => item.Writer)</a> - <a href="#comments">@Html.DisplayFor(model => item.Comments) comments</a></p>
                             </header>
                             <div>
-                                <p>@Html.DisplayFor(model => item.Content)</p>
+                                <p class="content">@Html.DisplayFor(model => item.Content)</p>
                                 <div>
-                                    <img id="Image" src=@item.Image />
+                                    <img id="Image" src=@item.Image title="Image not found" alt="Image not found" />
                                 </div>
                                 <div>
-                                    <video width="400" controls>
+                                     <video controls>
                                         <source src=@item.Video type="video/mp4" />
                                         Your browser does not support the video tag.
-                                    </video>
-                                </div>
+                                     </video>
+                               </div>
                            </div>
                         </article>
                     </section>

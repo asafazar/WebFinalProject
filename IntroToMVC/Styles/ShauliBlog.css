@@ -228,6 +228,10 @@ aside section {
 /*------------------------------
 =BLOG POST
 ------------------------------*/
+.blogPost {
+    width: 620px;
+}
+
 .blogPost header p, .blogPost header p a {
 		font-size: 14px;
 		font-style: italic;
@@ -242,7 +246,7 @@ aside section {
 .blogPost div {
 	/* Column-count not implemented yet */
 	-moz-column-count: 2;
-	-webkit-column-count: 2;
+	-webkit-column-count: 1;
 	
 	/* Column-gap not implemented yet */
 	-moz-column-gap: 22px;
@@ -252,11 +256,12 @@ aside section {
 .blogPost img {
 	margin: 22px 0;
 	-webkit-box-shadow: 3px 3px 7px #777;
+    width: 80%;
 }
 
 .blogPost video {
 	margin: 12px 0;
-	width: 100%;
+    width: 80%;
 	height: auto;
 	-webkit-box-shadow: 3px 3px 7px #777;
 }
@@ -473,8 +478,12 @@ form {
     div p {
     margin-top: 21px;
 	padding: 0 0 0 0;
+    -webkit-column-count: 1;
+    word-wrap: break-word;
 	}
 
+.content {
+}
     
 /*------------------------------
 =FOOTER
