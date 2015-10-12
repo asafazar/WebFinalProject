@@ -63,35 +63,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
             <img src="~/Common/Images/intro_shauli.png" alt="Shauli" />
         </section>
-        <section id="getTemperature">
-            Check the temparatue:
-            <select id="cityName">
-                <option value="-Choose-">- Choose -</option>
-                <option value="Ben-Gurion International Airport">Tel Aviv</option>
-                <option value="Eilat">Eilat</option>
-            </select>
-            <script>
-                $(document).ready(function () {
-                    $("#cityName").change(function () {
-                        if ($("#cityName option:selected").attr("value") != '-Choose-') {
-                            $.post("http://www.webservicex.net/globalweather.asmx/GetWeather",
-                            {
-                                CityName: $("#cityName option:selected").attr("value"),
-                                CountryName: "Israel"
-                            },
-                            function (data, status) {
-                                console.log(data);
-                                var xmlString = data.children[0].childNodes[0].data;
-                                xmlDoc = $.parseXML(xmlString),
-                                $xml = $(xmlDoc),
-                                $temperature = $xml.find("Temperature");
-                                alert($temperature[0].childNodes[0].data);
-                            });
-                        }
-                    });
-                });
-            </script>
-        </section>
         <div id="content">
             <div class="mainContent">
             <!--<div class="container body-content">-->

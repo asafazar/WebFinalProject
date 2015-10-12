@@ -48,9 +48,16 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-offset-2 col-md-10" id="saveComment" style="display:none;">
                         <input type="submit" value="Save" class="btn btn-default" />
                     </div>
+                    <script>
+                        var isTrue = "@this.Session["isAdmin"].Equals("Yes")";
+                        if (isTrue == "True") {
+                            $('#saveComment').show();
+                        }
+                    </script>
+
                 </div>
             </div>
         }
