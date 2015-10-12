@@ -62,7 +62,7 @@ namespace IntroToMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Writer,WebSite,PostingDate,Content,PostImage")] Post post)
+        public ActionResult Create([Bind(Include = "ID,Title,Writer,WebSite,PostingDate,Content,Image,Video")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace IntroToMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,RelatedPostID,Title,Writer,WriterWebSite,Content")] Post post)
+        public ActionResult Edit([Bind(Include = "ID,RelatedPostID,Title,Writer,WriterWebSite,Content,Image,Video")] Post post)
         {
             if (ModelState.IsValid)
             {
