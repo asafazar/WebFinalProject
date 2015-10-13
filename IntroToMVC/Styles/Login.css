@@ -61,7 +61,6 @@ p {
         width: 15em;
         color: white;
         border-radius: 5px;
-        margin-left: 5px;
         display: inline-block;
     }
 
@@ -71,19 +70,7 @@ input {
     padding: 3px;
 }
 
-#error {
-    display: none;
-    width: 0;
-    text-align: center;
-    margin-top: 25px;
-    margin-left: 160px;
-    padding: 10px;
-    border-radius: 10px;
-    color: lightyellow;
-    border: 1px solid lightyellow;
-    background-color: red;
-    box-shadow: 0px 0px 20px 10px;
-}
+
 
  .login {
     width: 340px;
@@ -262,20 +249,24 @@ body, input, button {
   transform: translateY(-3px);
 }
 
-/* Large Devices, Wide Screens */
-@media only screen and (max-width: 1200px) {
-  .login {
-    width: 600px;
-    font-size: 2em;
-  }
+#error {
+    display: none;
+    width: 0;
+    text-align: center;
+    margin-top: 25px;
+    padding: 10px;
+    color: #DEA8A8;
+    background-color: #BB1A1A;
+    padding: 5px 0;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      box-shadow: 0 0 1px transparent;
 }
-@media only screen and (max-width: 1100px) {
-  .login {
-    margin-top: 2%;
-    width: 600px;
-    font-size: 1.7em;
-  }
-}
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   .login {
@@ -285,34 +276,5 @@ body, input, button {
     min-height: 0;
   }
 }
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  .login {
-    margin-top: 0;
-    width: 500px;
-    font-size: 1.3em;
-    min-height: 0;
-  }
-}
-/* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
-  .login {
-    margin-top: 0;
-    width: 400px;
-    font-size: 1em;
-    min-height: 0;
-  }
-  .login h2 {
-    margin-top: 0;
-  }
-}
-/* Custom, iPhone Retina */
-@media only screen and (max-width: 320px) {
-  .login {
-    margin-top: 0;
-    width: 200px;
-    font-size: 0.7em;
-    min-height: 0;
-  }
-}
+
 

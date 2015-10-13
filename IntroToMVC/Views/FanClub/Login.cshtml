@@ -13,73 +13,49 @@
     <link href="~/Styles/Login.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <!--
-    <header>
-        <h1>Ha-Blog Shel Shauli</h1>
-    </header>
-    <img src="~/Common/Images/shauli.jpg"/>
-        <form action="@Url.Action("VerifyUser", "FanClub")" method="post">
-                Username:
-                <input type="text" name="userName" placeholder="Username">
-                Password:
-                <input type="password" name="Password" placeholder="Password">
-                <input type="submit" value="Login" class="defaultlogin">
-                <div id="error"></div>
-                <script>
-                $(document).ready(function () {
-                    if ("@Html.Raw(ViewBag.HtmlStr)" != "OK")
-                    {
-                        $('#error').html("@Html.Raw(ViewBag.HtmlStr)");
-                        $('#error').css("width", "300px");
-                        $('#error').fadeIn();
-                    }
-                });
-                </script>
-        </form>
-        <form action="@Url.Action("LogInFaceBook","FanClub")" method="post" >
-            <input type="submit" value="Sign in With Facebook" class="fblogin">
-        </form>
+    <table>
+        <td>
+            <div class="login">
+                <div class="heading">
+                    <h2>Sign in</h2>
+                    <form action="@Url.Action("VerifyUser", "FanClub")">
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Username" name="userName">
+                        </div>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Password" name="Password">
+                        </div>
+
+                        <button type="submit" class="float">Login</button>
+                    </form>
 
 
-        -->
-    <div class="login">
-        <div class="heading">
-            <h2>Sign in</h2>
-            <form action="@Url.Action("VerifyUser", "FanClub")">
+                    <form action="@Url.Action("LogInFaceBook","FanClub")" method="post">
+                        <button type="submit" class="fblogin">Sign in With Facebook</button>
 
-                <div class="input-group input-group-lg">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="Username" name="userName">
+
+                    </form>
+
+                    <div id="error" />
+
+                    <script>
+                        $(document).ready(function () {
+                            if ("@Html.Raw(ViewBag.HtmlStr)" != "OK") {
+                                $('#error').html("@Html.Raw(ViewBag.HtmlStr)");
+                                $('#error').css("width", "100%");
+                                $('#error').fadeIn();
+                            }
+                        });
+                    </script>
                 </div>
-
-                <div class="input-group input-group-lg">
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" class="form-control" placeholder="Password" name="Password">
-                </div>
-
-                <button type="submit" class="float">Login</button>
-                
-                <div id="error"></div>
-                <script>
-                    $(document).ready(function () {
-                        if ("@Html.Raw(ViewBag.HtmlStr)" != "OK") {
-                            $('#error').html("@Html.Raw(ViewBag.HtmlStr)");
-                            $('#error').css("width", "300px");
-                            $('#error').fadeIn();
-                        }
-                    });
-                </script>
-            </form>
-            
-            <form action="@Url.Action("LogInFaceBook","FanClub")" method="post">
-                <button type="submit" class="fblogin">Sign in With Facebook</button>
-            </form>
-                
-            
-
-        </div>
-    </div>
-
-   
+            </div>
+        <td>
+            <img src="~/Common/Images/shauli.jpg"/>
+        </td>
+    </table>
     </body>
 </html>

@@ -9,31 +9,30 @@
     <div id="mainContent">
         <h2>Branches Report</h2>
         <h3>Manager And His Branch</h3>
-        <div id="fans">
-            <table>
-                @*<tr>
-                        <th>
-                            @Html.DisplayNameFor(model => Model.Manager.FirstName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Manager.LastName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Manager.Gender)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Manager.BirthDate)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Manager.NumOfYearsInClub)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Branch.lat)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Branch.lng)
-                        </th>
-                    </tr>*@
+            <table class="CSSTableGenerator">
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => Model.Manager.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Manager.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Manager.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Manager.BirthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Manager.NumOfYearsInClub)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Branch.lat)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Branch.lng)
+                    </td>
+                </tr>
 
                 @foreach (var item in Model)
                 {
@@ -68,6 +67,6 @@
                     </tr>
                 }
             </table>
-        </div>
+       
 </div>
 </body>

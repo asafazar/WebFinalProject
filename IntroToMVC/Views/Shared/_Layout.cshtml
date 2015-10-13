@@ -31,9 +31,17 @@
                     <img id="titleLogo" style="width: 30px;" src="http://www.wpclipart.com/smiley/assorted_smiley/assorted_2/glossy_emoticon_button.png" alt="Logo">
 
                         <script>
-                            $('#titleLogo').click(function () {
-                                $("#titleLogo").attr("src", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpccAJ1LM1dA-QgIRi8MKjJJAdFdnw2SiBRIqkHSLIftrHnVovP43L72c");
-                            });
+                            $(document).ready(function () {
+                                $("#titleLogo").click(function () {
+                                    $.ajax({
+                                        url: "/Blog/RandomSmiley",
+                                        data: {},
+                                        success: (function(result) {
+                                            $("#titleLogo").attr("src", result);
+                                        })
+                                    });
+                                })
+                            })
                         </script>
                  </div>
               </div>        
