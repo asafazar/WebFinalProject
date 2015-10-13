@@ -49,6 +49,13 @@ namespace IntroToMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,name,lat,lng")] Branch branch)
         {
+            int session = int.Parse(this.Session["userID"].ToString());
+            var fans = from f in db.Fans
+                       select f ;
+            fans = fans.Where(s => s.ID == session);
+                       
+            branch.Manager = fans.ToList()[0];
+            
             if (ModelState.IsValid)
             {
                 db.Branches.Add(branch);
@@ -81,6 +88,13 @@ namespace IntroToMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,name,lat,lng")] Branch branch)
         {
+            int session = int.Parse(this.Session["userID"].ToString());
+            var fans = from f in db.Fans
+                       select f;
+            fans = fans.Where(s => s.ID == session);
+
+            branch.Manager = fans.ToList()[0]; 
+
             if (ModelState.IsValid)
             {
                 db.Entry(branch).State = EntityState.Modified;
