@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using IntroToMVC.Models;
 using System.Collections;
 using System.IO;
+using Facebook;
 
 namespace IntroToMVC.Controllers
 {
@@ -41,7 +42,7 @@ namespace IntroToMVC.Controllers
         {
             string app_id = "838250792939146";
             string app_secret = "5e6a472a233200ee63876f238adce751";
-            string scope = "publish_actions,manage_pages";
+            string scope = "publish_actions,manage_pages,user_birthday";
 
             if (Request["code"] == null)
             {
@@ -76,6 +77,48 @@ namespace IntroToMVC.Controllers
             {
                 status = Status.Admin;
                 this.Session["isAdmin"] = "Yes";
+                dynamic me;
+                Fan NewFan;
+
+                var fans = from f in db.Fans
+                           select f;
+                
+                var client = new FacebookClient(FanClubController.access_token);
+                try
+                {
+                    me = client.Get("me", new { fields = "name,id,first_name,last_name,gender" });
+                }
+                catch (Exception e)
+                {
+                    return RedirectToAction("Login", "FanClub");
+                }
+
+                string username = me.first_name;
+                string password = me.last_name;
+
+                fans = fans.Where(s => s.UserName.Equals(username) &&
+                                       s.Password.Equals(password));
+                if (fans.ToList().Count != 0)
+                    this.Session["userID"] = fans.ToList()[0].ID;
+
+                if (this.Session["userID"] == null)
+                {
+                    NewFan = new Fan(2,
+                                     me.first_name,
+                                     me.last_name,
+                                     me.gender,
+                                     DateTime.Today,
+                                     1,
+                                     me.first_name,
+                                     me.last_name
+                                     );
+
+                    db.Fans.Add(NewFan);
+                    db.SaveChanges();
+
+                    this.Session["userID"] = NewFan.ID;
+                }
+
                 return RedirectToAction("Index", "Blog");
             }
             else
@@ -110,6 +153,7 @@ namespace IntroToMVC.Controllers
                     this.Session["isAdmin"] = "No";
                 }
 
+                this.Session["userID"] = fans.ToList()[0].ID;
                 return RedirectToAction("Index", "Blog");
             }
             else

@@ -12,6 +12,26 @@ namespace IntroToMVC.Models
 
     public class Fan
     {
+        Fan() { }
+        public Fan(int nPermission,
+                   string stFirstName,
+                   string stLastName,
+                   string stGender,
+                   DateTime dtBirthDate,
+                   int nNumOfYearsInClub,
+                   string stUserName,
+                   string stPassword
+            ){
+            this.Permission = nPermission;
+            this.FirstName = stFirstName;
+            this.LastName = stLastName;
+            this.Gender = stGender;
+            this.BirthDate = dtBirthDate;
+            this.NumOfYearsInClub = nNumOfYearsInClub;
+            this.UserName = stUserName;
+            this.Password = stPassword;
+        }
+       
         public int ID { get; set; }
         public int Permission { get; set; }
         [DisplayName("First Name")]

@@ -24,26 +24,27 @@ function getUrlVars() { // Read a page's GET URL variables and return them as an
       function initialize() {
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
-          center: new google.maps.LatLng(32, 34),
-          zoom: 8,
+            center: new google.maps.LatLng(31.97,  34.79),
+          zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
 
-	var myLatLng = {lat: 32, lng: 34};
-	parameters = getUrlVars();
+        var myLatLng = { lat: 31.970094, lng: 34.771605 };
+	    parameters = getUrlVars();
 
-for (var i = 0; i < (parameters.length / 2); i++)
-{
-myLatLng = new google.maps.LatLng(parseFloat(parameters['lat' + i]),parseFloat(parameters['lng' + i]));
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Our Store'
-  });
-}
+        for (var i = 0; i < (parameters.length / 2); i++)
+        {
+            myLatLng = new google.maps.LatLng(parseFloat(parameters['lat' + i]), parseFloat(parameters['lng' + i]));
 
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Our Store'
+            });  
+        }
       }
+
       google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
@@ -51,5 +52,4 @@ myLatLng = new google.maps.LatLng(parseFloat(parameters['lat' + i]),parseFloat(p
   <body>
     <div id="map"></div>
   </body>
-<!-- Call Example: file:///C:/Users/Shai/Desktop/googleMaps.html?lat0=44.5403&lng0=-78.5463&lat1=44.44&lng1=-78.546 -->
 </html>
