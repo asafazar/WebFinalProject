@@ -98,6 +98,7 @@
     <Content Include="Common\Images\intro_flower.png" />
     <Content Include="Common\Images\intro_shauli.png" />
     <Content Include="Common\Images\nav_background.png" />
+    <Content Include="Common\Images\shauli.jpg" />
     <Content Include="Common\nem.mp3" />
     <Content Include="Common\Images\rss.png" />
     <Content Include="Common\Images\sidebar_background.png" />
