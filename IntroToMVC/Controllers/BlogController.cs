@@ -163,5 +163,19 @@ namespace IntroToMVC.Controllers
 
             return RedirectToAction("Index", "Branches");
         }
+
+
+        public string RandomSmiley()
+        {
+            var srcs = new[] { 
+                new { a = "http://www.smileyhuette.de/images/smiley-creator.png"},
+                new { a = "http://1.bp.blogspot.com/-n4re1AOb5x0/U-WP0ppwr5I/AAAAAAAALhY/QgFS0Bmp6Ug/s1600/cute-wink-smiley.png"},
+                new { a = "http://2.bp.blogspot.com/-1htSOEwswl4/U-V9kOlN_bI/AAAAAAAALeI/I18nP5qzyPs/s1600/tearful-smiley.png"}
+            };
+
+            var r = new Random();
+
+            return (srcs[r.Next(3)].a);
+        }   
     }
 }

@@ -12,7 +12,10 @@
             <table class="CSSTableGenerator">
                 <tr>
                     <td>
-                        @Html.DisplayNameFor(model => Model.Manager.FirstName)
+                        @Html.DisplayNameFor(model => model.Manager.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Manager.FirstName)
                     </td>
                     <td>
                         @Html.DisplayNameFor(model => model.Manager.LastName)
@@ -25,6 +28,9 @@
                     </td>
                     <td>
                         @Html.DisplayNameFor(model => model.Manager.NumOfYearsInClub)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Branch.name)
                     </td>
                     <td>
                         @Html.DisplayNameFor(model => model.Branch.lat)
